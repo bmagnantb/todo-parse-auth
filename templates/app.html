@@ -1,0 +1,16 @@
+<form class="add">
+    <input type="text">
+    <button>+</button>
+</form>
+
+<div class="list">
+    <ul>
+        <% _.forEach(data.models, function(val){ %>
+            <li>
+                <input type="checkbox" id="<%= val.id %>" <%= val.get('completed') ? 'checked' : null %>>
+                <label for="<%= val.id %>"></label>
+                <a href="#item/<%= val.get('title') %>"><span><%= val.get('title') %></span></a>
+            </li>
+            <% }) %>
+    </ul>
+</div>
