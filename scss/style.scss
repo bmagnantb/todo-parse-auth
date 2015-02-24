@@ -83,9 +83,16 @@ main {
     position: relative;
     min-height: 100%;
 }
+.logout {
+	position: absolute;
+	top: .5em;
+	right: 1em;
+	cursor: pointer;
+	z-index: 1;
+}
 .add {
     position: relative;
-    padding: 1em;
+    padding: 2.5em 1em 1em 1em;
     input[type="text"] {
         width: 100%;
         margin-right: 3em;
@@ -97,7 +104,7 @@ main {
         height: 1.6rem;
         line-height: .8rem;
         position: absolute;
-        top: 1.3rem;
+        top: 2.7rem;
         right: 1.5rem;
         background-color: #fff;
         font-size: 2em;

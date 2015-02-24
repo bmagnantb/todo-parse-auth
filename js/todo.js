@@ -12,7 +12,7 @@
                 router: this
             });
             this.user = Parse.User.current();
-           	Parse.history.start();
+            Parse.history.start();
         },
 
         routes: {
@@ -52,7 +52,7 @@
         },
 
         loggedIn: function() {
-            if (!this.user) {
+            if (!Parse.User.current()) {
                 this.navigate('login', {
                     trigger: true,
                     replace: true
@@ -166,6 +166,7 @@
         events: {
             'submit .add': 'addItem',
             'change .list input[type="checkbox"]': 'complete',
+            'click .logout': 'logout'
         },
 
         addItem: function(e) {
@@ -183,6 +184,14 @@
             })[0];
             item.set('completed', !item.get('completed'));
             this.collection.sort();
+        },
+
+        logout: function(e) {
+            Parse.User.logOut();
+            this.collection.reset();
+            this.options.router.navigate('login', {
+                trigger: true
+            });
         }
     });
 
