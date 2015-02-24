@@ -31,7 +31,7 @@ function app(){
 
         Parse.initialize("rUv6TbkVQAITaCWYJiURT0sWvUAWiUdOPfrx3fNG", "CpkyrEVgyfSpug8CWnlmtTGFx39X9dpgGjvyce5E");
 
-        window.router = new Parse.TodoRouter();
+        new Parse.TodoRouter();
 
     });
 
